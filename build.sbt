@@ -14,7 +14,7 @@ lazy val commonSettings = Seq(
   },
   publishArtifact in Test := false,
   pomIncludeRepository := { _ => false },
-  credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
+  credentials += Credentials(Path.userHome / ".ivy2" / ".ossrh-credentials"),
   pomExtra := (
     <url>https://github.com/vangj/spark-svm</url>
       <scm>
@@ -31,7 +31,9 @@ lazy val commonSettings = Seq(
           <organization>Jee Vang</organization>
           <organizationUrl>https://github.com/vangj</organizationUrl>
         </developer>
-      </developers>)
+      </developers>),
+  licenses := Seq("Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0")),
+  homepage := Some(url("https://github.com/vangj/spark-svm"))
 )
 
 lazy val commonDeps = Seq(
