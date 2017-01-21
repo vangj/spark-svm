@@ -166,14 +166,14 @@ object Sgd {
   def main(args: Array[String]): Unit = {
     val parser = new scopt.OptionParser[Params]("Sgd") {
       head("Sgd", "0.0.1")
-      opt[Int]("T").required().action( (x, c) => c.copy(T = x)).text("task id")
-      opt[Int]("k").required().action( (x, c) => c.copy(k = x)).text("input csv file")
-      opt[Double]("lambda").required().action( (x, c) => c.copy(lambda = x)).text("output hdfs directory")
-      opt[Long]("seed").required().action( (x, c) => c.copy(seed = x)).text("kafka servers")
-      opt[String]("delim").required().action( (x, c) => c.copy(delim = x)).text("kafka topic")
-      opt[Boolean]("debug").required().action( (x, c) => c.copy(debug = x)).text("kafka topic")
-      opt[String]("input").required().action( (x, c) => c.copy(input = x)).text("kafka topic")
-      opt[String]("output").required().action( (x, c) => c.copy(output = x)).text("kafka topic")
+      opt[Int]("T").required().action( (x, c) => c.copy(T = x)).text("number of iterations")
+      opt[Int]("k").required().action( (x, c) => c.copy(k = x)).text("number of samples")
+      opt[Double]("lambda").required().action( (x, c) => c.copy(lambda = x)).text("regularization parameter (learning rate)")
+      opt[Long]("seed").required().action( (x, c) => c.copy(seed = x)).text("seed for randomization")
+      opt[String]("delim").required().action( (x, c) => c.copy(delim = x)).text("delimiter for input file")
+      opt[Boolean]("debug").required().action( (x, c) => c.copy(debug = x)).text("flag to turn on debugging output")
+      opt[String]("input").required().action( (x, c) => c.copy(input = x)).text("input path")
+      opt[String]("output").required().action( (x, c) => c.copy(output = x)).text("output path")
     }
 
     parser.parse(args, Params()) match {
