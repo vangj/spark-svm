@@ -47,8 +47,17 @@ Notes on parameters.
 * delim is used to parse your input file.
 
 # Building
+This project depends on the following.
 
-You may use SBT v0.13.13 or Maven v3.3.9 to build this project. For SBT, type in the following.
+* Java v1.8
+* Scala v2.11.8
+
+You may use the following tools to build the project.
+
+* SBT v0.13.13 
+* Maven v3.3.9 
+
+For SBT, type in the following.
 
 ```
 sbt assembly
