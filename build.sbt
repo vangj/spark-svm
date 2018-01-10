@@ -50,7 +50,7 @@ lazy val commonDeps = Seq(
 
 lazy val app = (project in file("."))
   .settings(commonSettings: _*)
-  .settings(pgpPassphrase := scala.util.Properties.envOrNone("gpgpassphrase").map(_.toCharArray))
+//  .settings(pgpPassphrase := scala.util.Properties.envOrNone("gpgpassphrase").map(_.toCharArray))
   .settings(name := "spark-svm")
   .settings(libraryDependencies ++= commonDeps)
   .settings(parallelExecution in Test := false)
