@@ -2,4 +2,8 @@
 target/
 project/project/
 project/target/
+<<<<<<< HEAD
 spark-svm.iml
+=======
+*.iml
+>>>>>>> 918ca8edd7d029b5306ff89939e9ecf43795477c
