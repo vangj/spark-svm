@@ -110,13 +110,15 @@ class SgdTest extends FlatSpec with Matchers with SharedSparkContext {
     )
 
     val data = sc.parallelize(raw)
-    val params = new Params(400, 10, 0.01d, 37L)
+    val params = new Params(400, 100, 0.01d, 37L)
     val r = Sgd.learnHyperplane(data, params)
     val b = r._1
     val w = r._2
 
     raw.foreach(p => {
-      val r = p.x * w - b
+      val x1 = (p.x * w)
+      val x2 = x1 - b
+      val r = (p.x * w) - b
       if (p.y < 1) {
         (r < 0) should be(true)
       } else {
